@@ -1,0 +1,167 @@
+/* General style comments */
+/* Base font and background setup */
+* {
+    box-sizing: border-box; /* Universal selector applied globally */
+}
+
+/* Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fae7e7;
+    color: #333;
+}
+
+header, nav, main, section, footer {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Using CSS Variables with fallback */
+:root {
+    --primary-color: #efc9c9;
+    --secondary-color: #f7a2a2;
+}
+
+header {
+    background-color: var(--primary-color, rgb(214, 214, 245));
+    min-height: 50px;
+    min-width: 300px; /* Ensuring the header has a minimum width */
+    position: relative; /* Example of relative positioning */
+}
+
+/* Applying color using different methods */
+nav ul li a {
+    background-color: color-mix(in srgb, rgb(225, 197, 197) 90%, rgb(215, 148, 137) 10%);
+    text-decoration: none;
+}
+
+nav ul li a:hover,
+nav ul li a:active { /* Adding active state */
+    color: hsl(34, 95%, 57%);
+}
+
+/* Box Model - Long and Short Hand */
+section {
+    margin: 10px 15px 10px 15px; /* shorthand margin */
+    padding-top: 20px; /* longhand padding */
+    border-style: solid dashed dotted double; /* Shorthand for different sides */
+    border-color: color(display-p3 0.1 0.2 0.3); /* Shorthand for different sides */
+    border-width: 1px 2px 3px 4px; /* Shorthand for different sides */
+    padding-left: 5vw; /* Using viewport width relative unit */
+}
+
+/* Text styling */
+h1, h2, h3 { /* Selector list */
+    font-weight: normal;
+}
+
+h1 {
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+/* Display and Sizing */
+video, audio {
+    width: 100%; /* responsive width */
+    display: block;
+    margin: auto;
+}
+
+/* Positioning */
+footer {
+    width: 100%;
+    background-color: rgb(240, 208, 208);
+    margin-bottom: 2vh; /* Using viewport height relative unit */
+    padding: 20px 10px 0px 0px; /* Adjust padding as needed */
+    font-size: 0.8rem; /* Optional: Adjust font size as desired */
+    border-top: 1px solid #ccc; /* Adds a subtle top border */
+    text-align: center; /* Center the text or content within the footer */
+    position: static; /* Change from fixed to static */
+}
+
+/* Flexbox Layout */
+nav {
+    display: flex;
+    justify-content: space-around; /* Flexbox property */
+    align-items: center; /* Additional Flexbox property */
+}
+
+/* Grid Layout for Main */
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-row-gap: 20px; /* Additional Grid property */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    header {
+        min-width: 200px; /* Adjusting for smaller screens */
+    }
+}
+
+/* Selectors */
+/* ID Selector */
+#Agenda_1:Food_Preference {
+    background-color: #eef;
+}
+
+/* Class Selector */
+.special-section {
+    border-radius: 8px;
+    border-width: 3px;
+}
+
+/* Attribute Selector */
+input[type="text"] {
+    border: 2px solid #ddd;
+}
+
+/* Pseudo-class Selector */
+section:hover {
+    background-color: rgb(220, 180, 180);
+}
+
+/* Combinators */
+/* Descendant Combinator */
+nav ul li {
+    display: inline;
+    margin-right: 2mm;
+}
+
+/* Child Combinator */
+nav > ul {
+    background-color: rgb(241, 202, 202);
+}
+
+/* General Sibling Combinator */
+h1 ~ p {
+    margin-top: 0;
+}
+
+/* Adjacent Sibling Combinator */
+header + main {
+    border-top: 5pt solid var(--primary-color);
+}
+
+/* Combining Two Selectors */
+section.special-section { /* Combined class and element selector */
+    padding: 15px;
+}
+
+/* :has() Selector - Example */
+nav:has(a.active) {
+    border-bottom: 3px solid rgb(234, 193, 247);
+}
+
+/* Nested Selectors */
+nav ul {
+    list-style-type: none;
+}
